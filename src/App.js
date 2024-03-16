@@ -19,7 +19,6 @@ import Scaner from './features/teacher/Scan/scan';
 import Students from './features/teacher/Students/Students';
 import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/PersistLogin';
-import NewUserForm from './features/user/NoteTable';
 
 function App() {
   return (
