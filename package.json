@@ -50,10 +50,7 @@
       "last 1 safari version"
     ]
   },
-  "engines": {
-    "node": ">=18.18.0 <19.0.0"
-  },
-  "devDependencies": {
+   "devDependencies": {
     "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.8",
     "typescript": "^5.2.2"
