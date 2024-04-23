@@ -182,13 +182,18 @@ const NewUserForm = () => {
                   onChange={handleFileChange}
                 />
               </div>
-        <button
-          type="submit"
-          className={`w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded ${
-            !canSave || isLoading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-          disabled={!canSave}
-        >
+       <button
+  type="submit"
+  className={`w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded ${
+    !canSave || isLoading ? "opacity-50 cursor-not-allowed" : ""
+  }`}
+  disabled={!canSave}
+  onClick={onSaveUserClicked} // Add onClick attribute here
+>
+  <FontAwesomeIcon icon={faSave} className="mr-2" />
+  حفظ
+</button>
+
           <FontAwesomeIcon icon={faSave} className="mr-2" />
           حفظ
         </button>
