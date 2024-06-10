@@ -39,7 +39,7 @@ const NotesList = () => {
             <table className="w-full table-auto border border-gray-300" style={{ borderCollapse: "collapse", direction: 'rtl' }}>
                 <thead className="bg-gray-200">
                     <tr>
-                        <th className="px-4 py-2 text-center border bg-white">H</th>
+                        <th className="px-4 py-2 text-center border bg-white">العنوان</th>
                         <th className="px-4 py-2 text-center border bg-white">المقياس</th>
                         <th className="px-4 py-2 text-center border bg-white"> تحميل</th>
                         <th className="px-4 py-2 text-center border bg-white">التعديل</th>
