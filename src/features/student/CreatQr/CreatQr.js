@@ -94,20 +94,20 @@ const CreateQr = () => {
 
   const onSaveProjectClicked = async () => {
     try {
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('teacherName', teacherName);
+      formData.append('module', module);
+      formData.append('studentId', studentId);
+      formData.append('pdfFile', pdfFile); // Append the PDF file
 
-      await addNewProjet({
-        title,
-        teacherName,
-        module,
-        studentId,
-        fileContent,
-      });
+      await addNewProjet(formData);
     } catch (error) {
       console.error("Error saving project:", error);
     }
   };
 
-  const canSave = [title, teacherName, module].every(Boolean) && !isLoading;
+  const canSave = [title, teacherName, module, pdfFile].every(Boolean) && !isLoading;
 
   return (
     <div>
@@ -154,13 +154,13 @@ const CreateQr = () => {
                 </select>
               </div>
             
-              <div className="mb-4">
+               <div className="mb-4">
                 <label htmlFor="pdfFile" className="block text-gray-700">تحميل البحث:</label>
                 <input
                   type="file"
                   id="pdfFile"
                   className="w-full p-2 border border-gray-300 rounded"
-                  onChange={handleFileChange}
+                  onChange={e => setPdfFile(e.target.files[0])}
                 />
               </div>
               <button
@@ -168,8 +168,7 @@ const CreateQr = () => {
                 className={`w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded ${!canSave ? 'opacity-50 cursor-not-allowed' : ''}`}
                 disabled={!canSave}
                 onClick={onSaveProjectClicked}
-              >
-                حفظ
+              >حفظ
               </button>
               {isError && <p className="text-red-500">Error saving project: {error.message}</p>}
             </div>
