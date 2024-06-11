@@ -1,8 +1,5 @@
-
-
-Image chargée
-I have this image why when I use this code to download it he said failed.    import { useSelector } from 'react-redux';
-import { selectNoteById } from '../../notesApiSlice';
+import { useSelector } from 'react-redux';
+import { selectNoteById } from '../../notesApiSlice';    
 import { FaEdit, FaDownload } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import useAuth from "../../../hooks/useAuth";
