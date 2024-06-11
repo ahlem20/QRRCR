@@ -7,17 +7,17 @@ import useAuth from "../../../hooks/useAuth";
 const Note = ({ noteId }) => {
   const note = useSelector((state) => selectNoteById(state, noteId));
   const { username } = useAuth();
+  
   const handleDownload = () => {
-    // Replace 'imagePath' with the actual path of the image in your folder
-    const imagePath = '/qrrs.png';
+    // Ensure the image is in the public directory and accessible via the correct path
+    const imagePath = process.env.PUBLIC_URL + '/qrrs.png'; // Update this path as needed
     const link = document.createElement('a');
     link.href = imagePath;
-    link.download = 'qrrs.png'; // Use the appropriate file extension
+    link.download = 'qrrs.png';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-};
-
+  };
 
   if (note && note.studentId === username) {
     return (
