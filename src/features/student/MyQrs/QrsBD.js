@@ -12,10 +12,10 @@ const Note = ({ noteId }) => {
   const { username } = useAuth();
   const handleDownload = () => {
     // Replace 'imagePath' with the actual path of the image in your folder
-    const imagePath = '/qrrs.png';
+    const imagePath = '/qr.png';
     const link = document.createElement('a');
     link.href = imagePath;
-    link.download = 'qrrs.png'; // Use the appropriate file extension
+    link.download = 'qr.png'; // Use the appropriate file extension
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
