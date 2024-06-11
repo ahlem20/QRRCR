@@ -1,4 +1,7 @@
-import { useSelector } from 'react-redux';
+
+
+Image chargée
+I have this image why when I use this code to download it he said failed.    import { useSelector } from 'react-redux';
 import { selectNoteById } from '../../notesApiSlice';
 import { FaEdit, FaDownload } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -7,17 +10,17 @@ import useAuth from "../../../hooks/useAuth";
 const Note = ({ noteId }) => {
   const note = useSelector((state) => selectNoteById(state, noteId));
   const { username } = useAuth();
-  
   const handleDownload = () => {
-    // Ensure the image is in the public directory and accessible via the correct path
-    const imagePath = process.env.PUBLIC_URL + '/qrrs.png'; // Update this path as needed
+    // Replace 'imagePath' with the actual path of the image in your folder
+    const imagePath = '/qrrs.png';
     const link = document.createElement('a');
     link.href = imagePath;
-    link.download = 'qrrs.png';
+    link.download = 'qrrs.png'; // Use the appropriate file extension
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+};
+
 
   if (note && note.studentId === username) {
     return (
@@ -38,4 +41,4 @@ const Note = ({ noteId }) => {
   } else return null;
 };
 
-export default Note;
+export default Note;     
