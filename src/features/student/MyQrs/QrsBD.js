@@ -12,7 +12,7 @@ const Note = ({ noteId }) => {
     const imagePath = '/666794f973214bcd9d3ec809.jpg';
     const link = document.createElement('a');
     link.href = imagePath;
-    link.download = 'qr.jpg'; // Use the appropriate file extension
+    link.download = 'qrrs.png'; // Use the appropriate file extension
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
